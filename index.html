@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SerendipityAI-Travel7</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">SerendipityAI</a>
+        </div>
+        <nav class="header__nav--desktop">
+            <a href="map.html">Map</a>
+            <a href="journal.html">Journal</a>
+            <a href="itinerary.html">Itinerary</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="grid-2x2">
+                <div class="card card-link" onclick="location.href='map.html';">
+                    <span class="material-icons">map</span>
+                    <h2>Map</h2>
+                </div>
+                <div class="card card-link" onclick="location.href='journal.html';">
+                    <span class="material-icons">book</span>
+                    <h2>Journal</h2>
+                </div>
+                <div class="card card-link" onclick="location.href='itinerary.html';">
+                    <span class="material-icons">list_alt</span>
+                    <h2>Itinerary</h2>
+                </div>
+                <div class="card card-link" onclick="location.href='profile.html';">
+                    <span class="material-icons">person</span>
+                    <h2>Profile</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav--mobile">
+        <a href="map.html" class="nav__link">
+            <span class="material-icons">map</span>
+            <span class="nav__text">Map</span>
+        </a>
+        <a href="journal.html" class="nav__link">
+            <span class="material-icons">book</span>
+            <span class="nav__text">Journal</span>
+        </a>
+        <a href="itinerary.html" class="nav__link">
+            <span class="material-icons">list_alt</span>
+            <span class="nav__text">Itinerary</span>
+        </a>
+        <a href="profile.html" class="nav__link">
+            <span class="material-icons">person</span>
+            <span class="nav__text">Profile</span>
+        </a>
+    </nav>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

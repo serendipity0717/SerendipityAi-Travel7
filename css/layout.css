@@ -1,0 +1,126 @@
+/* Header styles */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    padding: 0 calc(var(--spacing-unit) * 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 64px;
+}
+
+.header--transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.header__logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.header__nav--desktop a {
+    margin-left: var(--spacing-unit);
+    font-weight: 500;
+}
+
+/* Mobile Navigation */
+.nav--mobile {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 -2px 5px var(--shadow-color);
+    z-index: 1000;
+    height: 60px;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 8px 0;
+}
+
+.nav__link .material-icons {
+    font-size: 24px;
+}
+
+.nav__text {
+    font-size: 12px;
+}
+
+/* Grid systems */
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+.grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--spacing-unit) * 1.5);
+}
+
+
+/* Page-specific layouts */
+.map-container {
+    display: flex;
+    height: calc(100vh - 64px); /* Full height minus header */
+}
+
+.map-panel {
+    width: 300px;
+    background-color: var(--white);
+    padding: var(--spacing-unit);
+    overflow-y: auto;
+    box-shadow: 2px 0 5px var(--shadow-color);
+    z-index: 10;
+}
+
+#map {
+    flex-grow: 1;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .grid-3col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header__nav--desktop {
+        display: none;
+    }
+
+    .nav--mobile {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .grid-2x2, .grid-3col {
+        grid-template-columns: 1fr;
+    }
+
+    .map-panel {
+        position: absolute;
+        left: -300px;
+        transition: left var(--transition-speed) ease;
+    }
+
+    .map-panel.open {
+        left: 0;
+    }
+}
