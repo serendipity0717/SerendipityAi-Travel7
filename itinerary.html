@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerary - SerendipityAI</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">SerendipityAI</a>
+        </div>
+        <nav class="header__nav--desktop">
+            <a href="map.html">Map</a>
+            <a href="journal.html">Journal</a>
+            <a href="itinerary.html">Itinerary</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Travel Itinerary</h1>
+                <button id="add-day-btn" class="btn btn-primary">
+                    <span class="material-icons">add</span> New Day
+                </button>
+            </div>
+            <div id="itinerary-container">
+                <!-- Itinerary days will be injected here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <div id="itinerary-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="itinerary-modal-title">New Itinerary Item</h2>
+            <form id="itinerary-form">
+                <input type="hidden" id="item-id">
+                <input type="hidden" id="day-id">
+                <div class="form-group">
+                    <label for="item-title">Activity</label>
+                    <input type="text" id="item-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="item-time">Time</label>
+                    <input type="time" id="item-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="item-description">Description</label>
+                    <textarea id="item-description" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <nav class="nav--mobile">
+        <a href="map.html" class="nav__link">
+            <span class="material-icons">map</span>
+            <span class="nav__text">Map</span>
+        </a>
+        <a href="journal.html" class="nav__link">
+            <span class="material-icons">book</span>
+            <span class="nav__text">Journal</span>
+        </a>
+        <a href="itinerary.html" class="nav__link">
+            <span class="material-icons">list_alt</span>
+            <span class="nav__text">Itinerary</span>
+        </a>
+        <a href="profile.html" class="nav__link">
+            <span class="material-icons">person</span>
+            <span class="nav__text">Profile</span>
+        </a>
+    </nav>
+
+    <script src="js/main.js"></script>
+    <script src="js/itinerary.js"></script>
+</body>
+</html>

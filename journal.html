@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - SerendipityAI</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">SerendipityAI</a>
+        </div>
+        <nav class="header__nav--desktop">
+            <a href="map.html">Map</a>
+            <a href="journal.html">Journal</a>
+            <a href="itinerary.html">Itinerary</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Travel Journal</h1>
+                <button id="add-entry-btn" class="btn btn-primary">
+                    <span class="material-icons">add</span> New Entry
+                </button>
+            </div>
+            <div id="journal-grid" class="grid-3col">
+                <!-- Journal entries will be injected here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <div id="journal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title">New Journal Entry</h2>
+            <form id="journal-form">
+                <input type="hidden" id="entry-id">
+                <div class="form-group">
+                    <label for="entry-title">Title</label>
+                    <input type="text" id="entry-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="entry-date">Date</label>
+                    <input type="date" id="entry-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="entry-content">Content</label>
+                    <textarea id="entry-content" rows="6" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Entry</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <nav class="nav--mobile">
+        <a href="map.html" class="nav__link">
+            <span class="material-icons">map</span>
+            <span class="nav__text">Map</span>
+        </a>
+        <a href="journal.html" class="nav__link">
+            <span class="material-icons">book</span>
+            <span class="nav__text">Journal</span>
+        </a>
+        <a href="itinerary.html" class="nav__link">
+            <span class="material-icons">list_alt</span>
+            <span class="nav__text">Itinerary</span>
+        </a>
+        <a href="profile.html" class="nav__link">
+            <span class="material-icons">person</span>
+            <span class="nav__text">Profile</span>
+        </a>
+    </nav>
+
+    <script src="js/main.js"></script>
+    <script src="js/journal.js"></script>
+</body>
+</html>
